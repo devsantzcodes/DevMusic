@@ -1,0 +1,32 @@
+{
+  "musicas": [
+    {
+      "id": 0,
+      "titulo": "BATE VOLTA",
+      "artista": "DJ TOPO, KEVIN O CHRIS, LUÍSA SONZA",
+      "capa": "https://img.youtube.com/vi/LNCqvUVzvhw/maxresdefault.jpg",
+      "audio": "DJ TOPO, KEVIN O CHRIS, LUÍSA SONZA - BATE VOLTA (Official Lyric Video) [QJMYeMf_DpE].mp3"
+    },
+    {
+      "id": 1,
+      "titulo": "SEQUÊNCIA FEITICEIRA",
+      "artista": "PEDRO SAMPAIO",
+      "capa": "https://img.youtube.com/vi/_zKnEm9xPWw/maxresdefault.jpg",
+      "audio": "PEDRO SAMPAIO - SEQUÊNCIA FEITICEIRA feat MC GW, MC Rodrigo do CN, MC Jhey, MC Nito [_zKnEm9xPWw].mp3"
+    },
+    {
+      "id": 2,
+      "titulo": "ENTENDEU O QUE NOIS SENTE?",
+      "artista": "JOTAPÊ",
+      "capa": "https://img.youtube.com/vi/_vypAyE_uuY/maxresdefault.jpg",
+      "audio": "JOTAPÊ - ENTENDEU O QUE NOIS SENTE_ [_vypAyE_uuY].mp3"
+    },
+    {
+      "id": 3,
+      "titulo": "Posso Até Não Te Dar Flores",
+      "artista": "MC Ryan SP, MC Jacaré e MC Meno K",
+      "capa": "https://img.youtube.com/vi/ztC8bM-EYOg/maxresdefault.jpg",
+      "audio": "Posso Até Não Te Da Flores - MC Ryan SP, MC Jacaré e MC Meno K (DJ Japa NK e DJ Davi DogDog) [ztC8bM-EYOg].mp3"
+    }
+  ]
+}

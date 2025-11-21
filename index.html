@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <i class="fab fa-spotify"></i>
+          <span>Dev Music</span>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="#"><i class="fas fa-home"></i> Início</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-search"></i> Buscar</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-book"></i> Sua Biblioteca</a>
+          </li>
+        </ul>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="#"><i class="fas fa-plus"></i> Criar Playlist</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-heart"></i> Músicas Curtidas</a>
+          </li>
+        </ul>
+        <div class="sidebar-playlists">
+          <h3>PLAYLISTS</h3>
+          <ul>
+            <li><a href="#">Minha Playlist #1</a></li>
+            <li><a href="#">Rock Clássico</a></li>
+            <li><a href="#">Top Brasil</a></li>
+            <li><a href="#">Funk</a></li>
+            <li><a href="#">Sertanejo</a></li>
+            <li><a href="#">Pagode</a></li>
+            <li><a href="#">Forró</a></li>
+            <li><a href="#">MPB</a></li>
+            <li><a href="#">Rock Nacional</a></li>
+            <li><a href="#">Pop</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header class="main-header">
+          <div class="header-actions">
+            <button class="menu-toggle" id="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-buttons">
+              <button><i class="fas fa-chevron-left"></i></button>
+              <button><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="user-profile">
+            <button class="profile-btn">
+              <img
+                src="178833078.jpg"
+                alt="Profile Picture"
+                class="profile-img"
+              />
+              <span>Roni</span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+          </div>
+        </header>
+
+        <main class="content">
+          <section class="playlist">
+            <h2>Tocadas recentemente</h2>
+            <div class="track-grid">
+              <!-- Exemplo de Card de Música -->
+              <div class="track-card">
+                <img
+                  src="https://img.youtube.com/vi/LNCqvUVzvhw/maxresdefault.jpg"
+                  alt="Album Cover"
+                />
+                <h3>BATE VOLTA</h3>
+                <p>Funk</p>
+              </div>
+              <div class="track-card">
+                <img src="file-ATgKNNvThxz91NWpfL8Yhh" alt="Album Cover" />
+                <h3>SEQUÊNCIA FEITICEIRA</h3>
+                <p>Funk</p>
+              </div>
+              <div class="track-card">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273a049d35aa573f3833852594d"
+                  alt="Album Cover"
+                />
+                <h3>ENTENDEU O QUE NOIS SENTE?</h3>
+                <p>Hip Hop / Rap</p>
+              </div>
+              <div class="track-card">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273429b4483a3e597254599386e"
+                  alt="Album Cover"
+                />
+                <h3>Posso Até Não Te Dar Flores</h3>
+                <p>Funk</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <!-- Footer Player -->
+      <footer class="player">
+        <div class="current-track">
+          <img
+            src="https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
+            alt="Current Track"
+          />
+          <div>
+            <h4>One</h4>
+            <p>Metallica</p>
+          </div>
+        </div>
+        <div class="player-controls">
+          <div class="buttons">
+            <button class="shuffle"><i class="fas fa-random"></i></button>
+            <button class="prev"><i class="fas fa-step-backward"></i></button>
+            <button class="play-pause"><i class="fas fa-play"></i></button>
+            <button class="next"><i class="fas fa-step-forward"></i></button>
+            <button class="repeat"><i class="fas fa-redo"></i></button>
+          </div>
+          <div class="progress-bar-container">
+            <span>1:32</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 30%"></div>
+            </div>
+            <span>4:50</span>
+          </div>
+        </div>
+        <div class="volume-controls">
+          <i class="fas fa-volume-up"></i>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

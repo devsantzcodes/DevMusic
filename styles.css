@@ -1,0 +1,384 @@
+:root {
+  --bg-main: #121212;
+  --bg-sidebar: #000000;
+  --bg-player: #181818;
+  --bg-card: #181818;
+  --bg-card-hover: #282828;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-primary: #1db954;
+  --border-color: #282828;
+  --font-primary: "Quicksand", sans-serif; /* Fonte moderna */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 240px;
+  background-color: var(--bg-sidebar);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-header {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sidebar-header .fa-spotify {
+  color: var(--accent-primary);
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0 24px;
+}
+
+.sidebar-nav li {
+  margin-bottom: 15px;
+}
+
+.sidebar-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: color 0.2s;
+}
+
+.sidebar-nav a:hover {
+  color: var(--text-primary);
+}
+
+.sidebar-playlists {
+  padding: 0 24px;
+  margin-top: 10px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.sidebar-playlists h3 {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.sidebar-playlists ul {
+  list-style: none;
+}
+
+.sidebar-playlists li {
+  margin-bottom: 10px;
+}
+
+.sidebar-playlists a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sidebar-playlists a:hover {
+  color: var(--text-primary);
+}
+
+/* --- Main Content --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita barras de rolagem indesejadas */
+  height: calc(100vh - 90px); /* Altura total menos o player */
+}
+
+.main-header {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-toggle {
+  display: none; /* Apenas para mobile */
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.nav-buttons button {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: var(--text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.user-profile .profile-btn {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: none;
+  padding: 4px 12px 4px 4px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.profile-btn .fa-user {
+  background-color: #535353;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.profile-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 2rem;
+  max-width: 1920px; /* Limita a largura do conteúdo em telas muito grandes */
+  width: 100%;
+  overflow-y: auto;
+}
+
+.playlist h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.track-card {
+  background-color: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.track-card:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.track-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.track-card h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.track-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* --- Player --- */
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: var(--bg-player);
+  border-top: 1px solid var(--border-color);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.current-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.current-track img {
+  width: 56px;
+  height: 56px;
+}
+
+.current-track h4 {
+  font-size: 0.9rem;
+}
+
+.current-track p {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-controls .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.player-controls button:hover {
+  color: var(--text-primary);
+}
+
+.player-controls button.active {
+  color: var(--accent-primary);
+}
+
+.player-controls .play-pause {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  flex: 1;
+  background-color: #535353;
+  border-radius: 5px;
+  height: 4px;
+}
+
+.progress-fill {
+  background-color: var(--text-primary);
+  height: 100%;
+  border-radius: 5px;
+}
+
+.volume-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.volume-controls .progress-bar {
+  width: 100px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  .main-content {
+    width: 100%;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .player {
+    grid-template-columns: 1fr 1fr;
+  }
+  .player-controls {
+    grid-column: 1 / -1;
+    order: -1;
+    padding-bottom: 10px;
+  }
+  .volume-controls {
+    justify-content: center;
+  }
+}
+
+/* --- Responsive para Celulares Pequenos --- */
+@media (max-width: 480px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .playlist h2 {
+    font-size: 1.5rem;
+  }
+
+  .track-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .player {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+}
