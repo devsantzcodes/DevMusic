@@ -1,3 +1,0 @@
-- [x] Remover cards de música hardcoded no index.html
-- [x] Remover fallback da playlist no scripts.js (confirmado como inútil)
-- [x] Testar o app após remoções
